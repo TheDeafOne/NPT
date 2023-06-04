@@ -1,5 +1,4 @@
 /** @type {import('next').NextConfig} */
+const nextConfig = {}
 
-module.exports = {
-    plugins: [require("dasiyui")]
-}
+module.exports = nextConfig
