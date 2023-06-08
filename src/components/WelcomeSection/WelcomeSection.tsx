@@ -4,7 +4,7 @@ const WelcomeSection = () => {
     return (
         <Section>
             <div>
-                test
+                welcome
             </div>
         </Section>
     )
