@@ -3,7 +3,7 @@ import Section from "../Section"
 const ContactSection = () => {
     return (
         <Section>
-            <div className="bg-black text-white">
+            <div id="contact-section" className="bg-black text-white">
                 about
             </div>
         </Section>

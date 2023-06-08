@@ -3,7 +3,7 @@ import Section from "../Section"
 const WelcomeSection = () => {
     return (
         <Section>
-            <div>
+            <div id="welcome-section bg-black">
                 welcome
             </div>
         </Section>

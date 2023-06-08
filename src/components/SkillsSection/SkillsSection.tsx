@@ -3,7 +3,7 @@ import Section from "../Section"
 const SkillsSection = () => {
     return (
         <Section>
-            <div className="bg-black text-white">
+            <div id="skills-section" className="bg-black text-white">
                 skills
             </div>
         </Section>
