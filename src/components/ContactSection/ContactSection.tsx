@@ -4,7 +4,7 @@ const ContactSection = () => {
     return (
         <Section>
             <div id="contact-section" className="bg-black text-white">
-                about
+                contact me
             </div>
         </Section>
     )
