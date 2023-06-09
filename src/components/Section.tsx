@@ -1,6 +1,6 @@
-const Section = ({children}: any) => {
+const Section = ({children, ...props}: any) => {
     return (
-        <div className="h-screen z-10">
+        <div {...props} className="h-screen z-10">
             {children}
         </div>
     )
