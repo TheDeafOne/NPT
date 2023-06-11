@@ -12,7 +12,33 @@ module.exports = {
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
+      colors: {
+        'text': '#f4f6f5',
+        'background': '#121715',
+        'primary-button': '#516151',
+        'secondary-button': '#f3fcf6',
+        'accent': '#516151',
+      },
+      fontFamily: {
+        sans: [
+          '"Inter"',
+          'system-ui',
+          '-apple-system',
+          'BlinkMacSystemFont',
+          '"Segoe UI"',
+          'Roboto',
+          '"Helvetica Neue"',
+          'Arial',
+          '"Noto Sans"',
+          'sans-serif',
+          '"Apple Color Emoji"',
+          '"Segoe UI Emoji"',
+          '"Segoe UI Symbol"',
+          '"Noto Color Emoji"',
+        ]
+      }
     },
+
   },
   plugins: [],
 }
