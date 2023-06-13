@@ -15,9 +15,9 @@ module.exports = {
       colors: {
         'text': '#f4f6f5',
         'background': '#121715',
-        'primary-button': '#516151',
+        'primary-button': '#b5cab4',
         'secondary-button': '#f3fcf6',
-        'accent': '#516151',
+        'accent': '#b5cab4',
       },
       fontFamily: {
         sans: [
