@@ -1,8 +1,8 @@
 import Section from "../Section"
 
-const SkillsSection = () => {
+const SkillsSection = (ref: any) => {
     return (
-        <Section>
+        <Section ref={ref}>
             <div id="skills-section" className="bg-black text-white">
                 skills
             </div>
