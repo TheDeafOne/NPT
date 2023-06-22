@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Logo from '../../resources/icon-light.svg';
 
-const handleScroll = (e: any, id: string) => {
+const handleNavigation = (e: any, id: string) => {
     e.preventDefault();
     const element = document.getElementById(id);
     const dims = element!.getBoundingClientRect();
@@ -23,7 +23,7 @@ const Navbar = (navItems: any) => {
                 <Image
                     src={Logo}
                     className="w-[60px] hover:cursor-pointer"
-                    onClick={(e) => handleScroll(e, "welcome-section")}
+                    onClick={(e) => handleNavigation(e, "welcome-section")}
                     alt=""
                     priority
                 />
@@ -36,7 +36,7 @@ const Navbar = (navItems: any) => {
                             key={i} 
                             id={`${navItem.id}-nav`} 
                             href={`#${navItem.id}`} 
-                            onClick={(e) => handleScroll(e, navItem.id)} 
+                            onClick={(e) => handleNavigation(e, navItem.id)} 
                             className="hover:text-accent text-text text-lg active:text-accent"
                         >
                             {navItem.title}
