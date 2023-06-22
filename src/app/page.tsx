@@ -1,3 +1,4 @@
+'use client'
 import AboutSection from "@/components/AboutSection/AboutSection";
 import ContactSection from "@/components/ContactSection/ContactSection";
 import ExperienceSection from "@/components/ExperienceSection/ExperienceSection";
@@ -7,6 +8,12 @@ import ProjectsSection from "@/components/ProjectsSection/ProjectsSection";
 import SkillsSection from "@/components/SkillsSection/SkillsSection";
 import WelcomeSection from "@/components/WelcomeSection/WelcomeSection";
 import { useRef } from "react";
+
+interface INavItem {
+  title: string,
+  id: string,
+  navRef: any
+}
 
 export default function Home() {
   const navItems = [

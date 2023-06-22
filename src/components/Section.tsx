@@ -1,6 +1,8 @@
-const Section = ({children, ...props}: any) => {
+import { useRef } from "react";
+
+const Section = ({children, ...props}: any, ref: any) => {
     return (
-        <div {...props} className="h-screen z-10">
+        <div {...props} ref={ref} className="h-screen z-10">
             {children}
         </div>
     )
