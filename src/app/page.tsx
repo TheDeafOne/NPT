@@ -7,8 +7,6 @@ import Navbar from "@/components/Navbar/Navbar";
 import ProjectsSection from "@/components/ProjectsSection/ProjectsSection";
 import SkillsSection from "@/components/SkillsSection/SkillsSection";
 import WelcomeSection from "@/components/WelcomeSection/WelcomeSection";
-import { useRef } from "react";
-
 
 export default function Home() {
   return (
