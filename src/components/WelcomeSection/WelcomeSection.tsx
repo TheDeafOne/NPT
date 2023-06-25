@@ -1,6 +1,6 @@
 import Section from "../Section"
 
-const WelcomeSection = (ref: any) => {
+const WelcomeSection = () => {
     return (
         <Section className="pt-6">
             <div id="welcome-section" className="bg-black text-white">

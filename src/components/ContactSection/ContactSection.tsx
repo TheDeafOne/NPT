@@ -1,8 +1,8 @@
 import Section from "../Section"
 
-const ContactSection = (ref: any) => {
+const ContactSection = () => {
     return (
-        <Section ref={ref}>
+        <Section>
             <div id="contact-section" className="bg-black text-white">
                 contact me
             </div>

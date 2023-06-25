@@ -14,9 +14,14 @@ const handleNavigation = (e: any, id: string) => {
     });
 };
 
-
-const Navbar = (navItems: any) => {
-    
+const Navbar = () => {
+    const navItems = [
+        { title: "About", id: "about-section" },
+        { title: "Skills", id: "skills-section" },
+        { title: "Projects", id: "projects-section" },
+        { title: "Experience", id: "experience-section" },
+        { title: "Contact Me", id: "contact-section" }
+    ]
     return (
         <nav id="navbar" className="bg-background sticky w-full z-20 top-0 left-0 flex flex-row justify-between shadow-md">
             <div className="px-2">
@@ -29,14 +34,14 @@ const Navbar = (navItems: any) => {
                 />
             </div>
             <div className="flex flex-row gap-5 px-10 justify-center items-center">
-                {navItems.map((navItem: any, i: number)  => {
+                {navItems.map((navItem: any, i: number) => {
                     return (
-                        <Link 
+                        <Link
                             title={navItem.title}
-                            key={i} 
-                            id={`${navItem.id}-nav`} 
-                            href={`#${navItem.id}`} 
-                            onClick={(e) => handleNavigation(e, navItem.id)} 
+                            key={i}
+                            id={`${navItem.id}-nav`}
+                            href={`#${navItem.id}`}
+                            onClick={(e) => handleNavigation(e, navItem.id)}
                             className="hover:text-accent text-text text-lg active:text-accent"
                         >
                             {navItem.title}
