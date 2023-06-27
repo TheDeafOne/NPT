@@ -1,6 +1,6 @@
 'use client';
 import Image from "next/image";
-import Link from "next/link";
+import { Link } from 'react-scroll';
 import Logo from '../../resources/icon-light.svg';
 
 const handleNavigation = (e: any, id: string) => {
@@ -22,6 +22,7 @@ const Navbar = () => {
         { title: "Experience", id: "experience-section" },
         { title: "Contact Me", id: "contact-section" }
     ]
+    
     return (
         <nav id="navbar" className="bg-background sticky w-full z-20 top-0 left-0 flex flex-row justify-between shadow-md">
             <div className="px-2">
@@ -41,8 +42,11 @@ const Navbar = () => {
                             key={i}
                             id={`${navItem.id}-nav`}
                             href={`#${navItem.id}`}
-                            onClick={(e) => handleNavigation(e, navItem.id)}
                             className="hover:text-accent text-text text-lg active:text-accent"
+                            to={navItem.id}
+                            spy={true} 
+                            smooth={true} 
+                            duration={500} 
                         >
                             {navItem.title}
                         </Link>
