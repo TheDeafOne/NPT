@@ -43,6 +43,7 @@ const Navbar = () => {
                             smooth={true} 
                             duration={500} 
                             offset={-navHeight}
+                            activeClass="text-accent"
                         >
                             {navItem.title}
                         </ScrollLink>

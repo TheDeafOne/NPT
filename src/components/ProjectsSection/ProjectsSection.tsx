@@ -2,8 +2,8 @@ import Section from "../Section"
 
 const ProjectsSection = () => {
     return (
-        <Section>
-            <div id="projects-section" className="bg-black text-white">
+        <Section id="projects-section">
+            <div className="bg-black text-white">
                 projects
             </div>
         </Section>
