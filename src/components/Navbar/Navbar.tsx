@@ -2,6 +2,7 @@
 import Image from "next/image";
 import { Link } from 'react-scroll';
 import Logo from '../../resources/icon-light.svg';
+import { useEffect, useState } from "react";
 
 const handleNavigation = (e: any, id: string) => {
     e.preventDefault();
@@ -15,6 +16,7 @@ const handleNavigation = (e: any, id: string) => {
 };
 
 const Navbar = () => {
+    const [navHeight, setNavHeight] = useState(0)
     const navItems = [
         { title: "About", id: "about-section" },
         { title: "Skills", id: "skills-section" },
@@ -22,6 +24,10 @@ const Navbar = () => {
         { title: "Experience", id: "experience-section" },
         { title: "Contact Me", id: "contact-section" }
     ]
+
+    useEffect(() => {
+        setNavHeight(document.getElementById("navbar")!.offsetHeight);
+    }, [])
     
     return (
         <nav id="navbar" className="bg-background sticky w-full z-20 top-0 left-0 flex flex-row justify-between shadow-md">
@@ -47,6 +53,7 @@ const Navbar = () => {
                             spy={true} 
                             smooth={true} 
                             duration={500} 
+                            offset={-navHeight}
                         >
                             {navItem.title}
                         </Link>
