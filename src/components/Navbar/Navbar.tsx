@@ -1,19 +1,8 @@
 'use client';
 import Image from "next/image";
-import { Link } from 'react-scroll';
+import { Link as ScrollLink, animateScroll } from 'react-scroll';
 import Logo from '../../resources/icon-light.svg';
 import { useEffect, useState } from "react";
-
-const handleNavigation = (e: any, id: string) => {
-    e.preventDefault();
-    const element = document.getElementById(id);
-    const dims = element!.getBoundingClientRect();
-    const navHeight = document.getElementById("navbar")!.offsetHeight
-    window.scrollTo({
-        top: dims.top - navHeight + window.scrollY,
-        behavior: "smooth"
-    });
-};
 
 const Navbar = () => {
     const [navHeight, setNavHeight] = useState(0)
@@ -35,7 +24,7 @@ const Navbar = () => {
                 <Image
                     src={Logo}
                     className="w-[60px] hover:cursor-pointer"
-                    onClick={(e) => handleNavigation(e, "welcome-section")}
+                    onClick={() => animateScroll.scrollToTop()}
                     alt=""
                     priority
                 />
@@ -43,7 +32,7 @@ const Navbar = () => {
             <div className="flex flex-row gap-5 px-10 justify-center items-center">
                 {navItems.map((navItem: any, i: number) => {
                     return (
-                        <Link
+                        <ScrollLink
                             title={navItem.title}
                             key={i}
                             id={`${navItem.id}-nav`}
@@ -56,7 +45,7 @@ const Navbar = () => {
                             offset={-navHeight}
                         >
                             {navItem.title}
-                        </Link>
+                        </ScrollLink>
                     )
                 })}
             </div>
