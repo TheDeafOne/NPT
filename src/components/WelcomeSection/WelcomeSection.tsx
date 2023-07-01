@@ -5,29 +5,28 @@ import Image from "next/image";
 import anime from 'animejs';
 
 const WelcomeSection = () => {
-    const [animationRef, setAnimationRef] = useState<ReturnType<typeof anime> | undefined>();
-    const nameRef = useRef<HTMLImageElement>(null);
+    const nameRef = useRef<SVGSVGElement>(null);
 
     useEffect(() => {
-        setAnimationRef(
-            anime({
-                targets: "#name path",
-                strokeDashoffset: [anime.setDashoffset, 0],
-                easing: 'easeInOutSine',
-                duration: 1000,
-                delay: (el, i) => {
-                    return i > 0 ? i * 200 : 0;
-                },
-                direction: 'alternate',
-                loop: false
-            })
-        )
+        anime({
+            targets: "#name path",
+            strokeDashoffset: [anime.setDashoffset, 0],
+            easing: 'easeInOutSine',
+            duration: 800,
+            delay: (el, i) => {
+                return i > 6 ? (i - 6) * 200 : 0;
+            },
+            direction: 'alternate',
+            loop: false
+        })
+        
+        nameRef.current?.classList.remove('invisible')
     }, [])
 
     return (
         <Section id="welcome-section" className="pt-6">
             <div className="h-screen flex align-center justify-center">
-                <svg className="transform scale-75" id="name" width="492" height="143" viewBox="0 0 492 143" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg className="transform scale-75 invisible" id="name" width="492" height="143" viewBox="0 0 492 143" fill="none" xmlns="http://www.w3.org/2000/svg" ref={nameRef}>
                     <mask id="path-1-outside-1_1_3" maskUnits="userSpaceOnUse" x="0.681824" y="0.27272" width="492" height="142" fill="black">
                         <rect fill="white" x="0.681824" y="0.27272" width="492" height="142"/>
                         <path d="M3.68182 108V3.27272H16.3636V55.2273H17.5909L64.6364 3.27272H81.2046L37.2273 50.5227L81.2046 108H65.8636L29.4546 59.3182L16.3636 74.0455V108H3.68182Z"/>
