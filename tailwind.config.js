@@ -36,7 +36,16 @@ module.exports = {
           '"Segoe UI Symbol"',
           '"Noto Color Emoji"',
         ]
-      }
+      },
+      animation: {
+        'slide-out': 'slide-out 2s linear forwards',
+      },
+      keyframes: {
+        'slide-out': {
+          '0%': { transform: 'translateX(0)', opacity: '1' },
+          '100%': { transform: 'translateX(100%)', opacity: '0' },
+        },
+      },
     },
 
   },
