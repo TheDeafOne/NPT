@@ -37,7 +37,7 @@ const Navbar = () => {
                             key={i}
                             id={`${navItem.id}-nav`}
                             href={`#${navItem.id}`}
-                            className="hover:text-accent text-text font-semibold text-xl font-sans active:text-accent "
+                            className="text-text text-xl font-lato font-semibold hover:text-accent active:text-accent"
                             to={navItem.id}
                             spy={true}
                             smooth={true}

@@ -1,35 +1,41 @@
-import Section from "../Section";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { useWindowScroll } from "react-use";
+import Section from "../Section";
 
 const WelcomeSection = () => {
-    const { y: scrollY } = useWindowScroll();
-    const welcomeRef = useRef<HTMLDivElement>(null);
-    const [welcomeSectionHeight, setWelcomeSectionHeight] = useState<number>(1);
+    const [sectionHeight, setSectionHeight] = useState(0);
+    const sectionRef = useRef<HTMLDivElement>(null);
+    const { y: scrollY } = useWindowScroll(); 
+    const allDescriptors = 'Student • Software Engineer • Tetris Enthusiast'
 
     useEffect(() => {
-        if (welcomeRef!.current?.clientHeight !== undefined ){
-            setWelcomeSectionHeight(welcomeRef!.current?.clientHeight)
+        if (sectionRef!.current?.clientHeight !== undefined ) {
+            setSectionHeight(sectionRef!.current?.clientHeight)
         }
-    }, [])
+    }, []);
 
     return (
-        <Section id="welcome-section" className="pt-6">
-            <div className="h-screen flex items-center flex-col" ref={welcomeRef}>
-                <div className="my-[10%]">
+        <Section id="welcome-section">
+            <div className="h-screen -my-[30px] flex items-center justify-center flex-col" ref={sectionRef}>
+                <div className='font-lato text-text'>
+                    <div className=' relative -top[10px]'>
+                        <span className='text-7xl font-bold'>
+                            KEEGAN
+                        </span>
+                    </div>  
                     <div>
-                        <span className="text-text text-5xl font-semibold">
-                            Hey, I'm
+                        <span className='text-7xl font-bold'>
+                            WOODBURN
                         </span>
                     </div>
                     <div>
-                        <span className={`text-text text-8xl opacity-${1-scrollY/window.innerHeight} font-bold`}>
-                            {/* Keegan */}
-                            {1-scrollY/welcomeSectionHeight}
+                        <span className="inline-block top-[5px] font-semibold text-xl">
+                            {allDescriptors.substring(0,Math.ceil((scrollY/sectionHeight * 5 * allDescriptors.length)))}
                         </span>
                     </div>
                 </div>
             </div>
+            
         </Section>
     )
 }

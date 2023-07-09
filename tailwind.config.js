@@ -20,8 +20,8 @@ module.exports = {
         'accent': '#b5cab4',
       },
       fontFamily: {
-        sans: [
-          '"Red Hat Text"',
+        lato: [
+          '"Lato"',
           'system-ui',
           '-apple-system',
           'BlinkMacSystemFont',
