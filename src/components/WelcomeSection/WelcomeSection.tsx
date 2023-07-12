@@ -4,6 +4,7 @@ import Section from "../Section";
 
 const WelcomeSection = () => {
     const [sectionHeight, setSectionHeight] = useState(0);
+    const [isClient, setIsClient] = useState(false);
     const sectionRef = useRef<HTMLDivElement>(null);
     const { y: scrollY } = useWindowScroll(); 
     const allDescriptors = 'Student • Software Engineer • Tetris Enthusiast'
@@ -12,6 +13,7 @@ const WelcomeSection = () => {
         if (sectionRef!.current?.clientHeight !== undefined ) {
             setSectionHeight(sectionRef!.current?.clientHeight)
         }
+        setIsClient(true);
     }, []);
 
     return (
@@ -30,7 +32,7 @@ const WelcomeSection = () => {
                     </div>
                     <div>
                         <span className="inline-block top-[5px] font-semibold text-xl">
-                            {allDescriptors.substring(0,Math.ceil((scrollY/sectionHeight * 5 * allDescriptors.length)))}
+                            {isClient ? allDescriptors.substring(0,Math.ceil((scrollY/sectionHeight * 5 * allDescriptors.length))) : ''}
                         </span>
                     </div>
                 </div>
