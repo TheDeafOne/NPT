@@ -27,12 +27,12 @@ const WelcomeSection = () => {
                             KEEGAN
                         </span>
                     </div>  
-                    <div>
+                    <div className="relative">
                         <span className='text-7xl font-bold'>
                             WOODBURN
                         </span>
                     </div>
-                    <div>
+                    <div className="absolute">
                         <span className="inline-block top-[5px] font-semibold text-xl">
                             {isClient ? allDescriptors.substring(0,Math.ceil((scrollY/sectionHeight * 5 * allDescriptors.length))) : ''}
                         </span>

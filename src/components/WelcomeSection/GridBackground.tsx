@@ -17,7 +17,7 @@ const GridBackground = () => {
             <div className='h-screen grid grid-cols-repeat grid-rows-repeat' ref={backgroundRef}>
                 {Array.from(Array(columns * rows)).map((e, id) => {
                     return (
-                        <div key={id} className="outline outline-2 outline-black" />
+                        <div key={id} className="outline outline-1 outline-black" />
                     )
                 })}
             
