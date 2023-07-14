@@ -8,18 +8,20 @@ const GridBackground = () => {
         if (backgroundRef!.current !== null) {
             setColumns(Math.floor(backgroundRef!.current.clientWidth / 50));
             setRows(Math.floor(backgroundRef!.current.clientHeight / 50));
+            console.log(Math.floor(backgroundRef!.current.clientHeight / 50))
+            console.log(Math.floor(backgroundRef!.current.clientWidth / 50))
         }
     }, [])
     return (
-        <div className='h-screen grid grid-cols-6' ref={backgroundRef}>
-            {Array.from(Array(columns * rows)).map((e, id) => {
-                return (
-                    <div key={id}>
-                        test
-                    </div>
-                )
-            })}
-        
+        <div className="absolute w-screen h-screen text-text">
+            <div className='h-screen grid grid-cols-repeat grid-rows-repeat' ref={backgroundRef}>
+                {Array.from(Array(columns * rows)).map((e, id) => {
+                    return (
+                        <div key={id} className="outline outline-2 outline-black" />
+                    )
+                })}
+            
+            </div>
         </div>
     )
 }

@@ -47,10 +47,10 @@ module.exports = {
         },
       },
       gridTemplateColumns: {
-        'repeat': 'repeat(16, 1fr)'
+        'repeat': 'repeat(25, 1fr)'
       },
       gridTemplateRows: {
-        'repeat': 'repeat(16, 1fr)'
+        'repeat': 'repeat(13, 1fr)'
       }
     },
 
