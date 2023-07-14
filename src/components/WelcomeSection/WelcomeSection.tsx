@@ -1,6 +1,7 @@
 import { useEffect, useState, useRef } from "react";
 import { useWindowScroll } from "react-use";
 import Section from "../Section";
+import GridBackground from "./GridBackground";
 
 const WelcomeSection = () => {
     const [sectionHeight, setSectionHeight] = useState(0);
@@ -18,7 +19,8 @@ const WelcomeSection = () => {
 
     return (
         <Section id="welcome-section">
-            <div className="h-screen -my-[30px] flex items-center justify-center flex-col" ref={sectionRef}>
+            <GridBackground />
+            <div className="h-screen flex items-center justify-center flex-col bg-transparent" ref={sectionRef}>
                 <div className='font-lato text-text'>
                     <div className=' relative -top[10px]'>
                         <span className='text-7xl font-bold'>

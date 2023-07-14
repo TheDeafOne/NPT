@@ -46,6 +46,12 @@ module.exports = {
           '100%': { transform: 'translateX(100%)' },
         },
       },
+      gridTemplateColumns: {
+        'repeat': 'repeat(16, 1fr)'
+      },
+      gridTemplateRows: {
+        'repeat': 'repeat(16, 1fr)'
+      }
     },
 
   },
