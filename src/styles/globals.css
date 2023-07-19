@@ -18,10 +18,29 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
+  background: linear-gradient(to bottom,
       transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+      rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
+}
+
+@keyframes test {
+  from {
+    background-position: 0%;
+  }
+  to {
+    background-position: 200%;
+  }
+}
+
+.linear-animation {
+  background-size: 200%;
+  animation: test 10s linear infinite;
+  /* background-color: black; */
+  /* background-color: linear-gradient(
+    to right,
+    white,
+    green,
+    black,
+  ); */
+  z-index: 20;
 }

@@ -1,3 +1,5 @@
+const { ClientReferenceManifestPlugin } = require('next/dist/build/webpack/plugins/flight-manifest-plugin');
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
@@ -7,6 +9,23 @@ module.exports = {
   ],
   theme: {
     extend: {
+      keyframes: {
+        'gradient-animation': {
+          '0%': {
+            backgroundPosition: '0%',
+          },
+          '100%': {
+            backgroundPosition: '200%',
+          },
+        },
+
+      },
+      animation: {
+        'gradient-movement': 'gradient-animation 10s linear infinite',
+      },
+      backgroundSize: {
+        '200': '200%'
+      },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
@@ -18,6 +37,7 @@ module.exports = {
         'primary-button': '#b5cab4',
         'secondary-button': '#f3fcf6',
         'accent': '#b5cab4',
+        'primary': '#1A3511'
       },
       fontFamily: {
         lato: [
@@ -36,15 +56,6 @@ module.exports = {
           '"Segoe UI Symbol"',
           '"Noto Color Emoji"',
         ]
-      },
-      animation: {
-        'slide-out': 'slide-out 2s linear forwards',
-      },
-      keyframes: {
-        'slide-out': {
-          '0%': { transform: 'translateX(0)' },
-          '100%': { transform: 'translateX(100%)' },
-        },
       },
       gridTemplateColumns: {
         'repeat': 'repeat(25, 1fr)'
