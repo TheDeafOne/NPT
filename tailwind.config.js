@@ -21,7 +21,7 @@ module.exports = {
 
       },
       animation: {
-        'gradient-movement': 'gradient-animation 10s linear infinite',
+        'gradient-movement': 'gradient-animation 8s linear infinite',
       },
       backgroundSize: {
         '200': '200%'
