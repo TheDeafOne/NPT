@@ -2,25 +2,27 @@ import anime from "animejs";
 import { useEffect, useRef, useState } from "react";
 
 const GridBackground = () => {
-    const [columns, setColumns] = useState(5);
-    const [rows, setRows] = useState(5);
+    const [columns, setColumns] = useState(25);
+    const [rows, setRows] = useState(13);
     const [toggled, setToggled] = useState(false);
     const backgroundRef = useRef<HTMLDivElement>(null);
     useEffect(() => {
         if (backgroundRef!.current !== null) {
             setColumns(Math.floor(backgroundRef!.current.clientWidth / 50));
             setRows(Math.floor(backgroundRef!.current.clientHeight / 50));
-            console.log(Math.floor(backgroundRef!.current.clientHeight / 50))
-            console.log(Math.floor(backgroundRef!.current.clientWidth / 50))
         }
     }, [])
 
     const onTileClick = (e: any) => {
         const index = Number(e.target.id)
-        console.log(index);
+        setToggled(!toggled);
         anime({
             targets: ".tile",
             opacity: toggled ? 0 : 1,
+            delay: anime.stagger(50, {
+                grid: [columns, rows],
+                from: index
+            })
         });
     }
     return (
