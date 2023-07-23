@@ -3,6 +3,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import { Link as ScrollLink, animateScroll } from 'react-scroll';
 import Logo from '../../resources/icon-light.svg';
+import anime from "animejs";
 
 const Navbar = () => {
     const [navHeight, setNavHeight] = useState(0)
@@ -16,11 +17,16 @@ const Navbar = () => {
 
     useEffect(() => {
         setNavHeight(document.getElementById("navbar")!.offsetHeight);
+        // anime({
+        //     targets: ".navlink",
+        //     translateY: 100,
+        //     delay: anime.stagger(100)
+        // });
     }, [])
 
     return (
-        <nav id="navbar" className="bg-background sticky w-full z-20 top-0 left-0 flex flex-row justify-between shadow-md">
-            <div className="px-2">
+        <nav id="navbar" className="bg-transparent sticky w-full z-20 top-0 left-0 flex flex-row items-center justify-center">
+            <div className="relative flex-1">
                 <Image
                     src={Logo}
                     className="w-[60px] hover:cursor-pointer"
@@ -37,7 +43,7 @@ const Navbar = () => {
                             key={i}
                             id={`${navItem.id}-nav`}
                             href={`#${navItem.id}`}
-                            className="text-text text-xl font-lato font-semibold hover:text-accent active:text-accent"
+                            className="navlink text-text text-xl font-lato font-semibold hover:text-accent active:text-accent transform"
                             to={navItem.id}
                             spy={true}
                             smooth={true}
@@ -49,6 +55,9 @@ const Navbar = () => {
                         </ScrollLink>
                     )
                 })}
+            </div>
+            <div className="flex-1">
+                test
             </div>
         </nav>
     )

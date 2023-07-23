@@ -18,7 +18,6 @@ module.exports = {
             backgroundPosition: '200%',
           },
         },
-
       },
       animation: {
         'gradient-movement': 'gradient-animation 8s linear infinite',
