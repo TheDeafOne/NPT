@@ -1,5 +1,5 @@
-import { useEffect, useRef, useState } from "react"
 import anime from "animejs";
+import { useEffect, useRef, useState } from "react";
 
 const GridBackground = () => {
     const [columns, setColumns] = useState(5);
@@ -17,24 +17,21 @@ const GridBackground = () => {
 
     const onTileClick = (e: any) => {
         const index = Number(e.target.id)
+        console.log(index);
         anime({
-            targets: "#tile",
+            targets: ".tile",
             opacity: toggled ? 0 : 1,
-            delay: anime.stagger(50, {
-                grid: [columns, rows],
-                from: index
-            })
-          });
+        });
     }
     return (
         <div className="absolute w-screen h-screen">
             <div className='h-screen grid grid-cols-repeat grid-rows-repeat' ref={backgroundRef}>
                 {Array.from(Array(columns * rows)).map((e, id) => {
                     return (
-                        <div onClick={onTileClick} key={id} id="tile" className="tile relative before:bg-background before:content-[''] before:absolute before:inset-[0.5px]" />
+                        <div onClick={onTileClick} key={id} id={String(id)} className="tile relative before:bg-background before:content-[''] before:absolute before:inset-[0.5px]" />
                     )
                 })}
-            
+
             </div>
         </div>
     )

@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import { useWindowScroll } from "react-use";
+import '../../styles/globals.css';
 import Section from "../Section";
 import GridBackground from "./GridBackground";
-import '../../styles/globals.css';
 
 const WelcomeSection = () => {
     const [sectionHeight, setSectionHeight] = useState(0);
@@ -21,8 +21,8 @@ const WelcomeSection = () => {
     return (
         <Section id="welcome-section">
             <GridBackground />
-            <div id="background-mask" className="absolute h-screen w-screen bg-gradient-to-b from-background from-2% via-transparent to-background to-98%" />
-            <div className="h-screen flex items-center justify-center flex-col bg-200 animate-gradient-movement bg-gradient-to-r from-[#233329] via-[#46683A] to-[#233329]" ref={sectionRef}>
+            <div id="background-mask" className="absolute h-screen w-screen bg-gradient-to-b from-background via-transparent to-background pointer-events-none" />
+            <div className="h-screen flex items-center justify-center flex-col bg-200 animate-gradient-movement bg-gradient-to-r from-[#233329] via-[#364F2D] to-[#233329]" ref={sectionRef}>
                 <div className='font-lato text-text'>
                     <div className=' relative -top[10px]'>
                         <span className='text-7xl font-bold'>
