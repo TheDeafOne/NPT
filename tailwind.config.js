@@ -57,12 +57,6 @@ module.exports = {
           '"Noto Color Emoji"',
         ]
       },
-      gridTemplateColumns: {
-        'repeat': 'repeat(25, 1fr)'
-      },
-      gridTemplateRows: {
-        'repeat': 'repeat(13, 1fr)'
-      }
     },
 
   },

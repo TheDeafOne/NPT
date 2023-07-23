@@ -11,6 +11,12 @@ const GridBackground = () => {
             setColumns(Math.floor(backgroundRef!.current.clientWidth / 50));
             setRows(Math.floor(backgroundRef!.current.clientHeight / 50));
         }
+        window.onresize = () => {
+            if (backgroundRef!.current !== null) {
+                setColumns(Math.floor(backgroundRef!.current.clientWidth / 50));
+                setRows(Math.floor(backgroundRef!.current.clientHeight / 50));
+            }
+        };
     }, [])
 
     const onTileClick = (e: any) => {
@@ -25,9 +31,15 @@ const GridBackground = () => {
             })
         });
     }
+
+    const gridStyles = {
+        gridTemplateColumns: `repeat(${columns}, 1fr)`,
+        gridTemplateRows: `repeat(${rows}, 1fr)`,
+    };
+
     return (
         <div className="absolute w-screen h-screen">
-            <div className='h-screen grid grid-cols-repeat grid-rows-repeat' ref={backgroundRef}>
+            <div className='h-screen grid' style={gridStyles} ref={backgroundRef}>
                 {Array.from(Array(columns * rows)).map((e, id) => {
                     return (
                         <div onClick={onTileClick} key={id} id={String(id)} className="tile relative before:bg-background before:content-[''] before:absolute before:inset-[0.5px]" />
