@@ -21,9 +21,9 @@ const Navbar = () => {
         setIsClient(true);
         anime({
             targets: ".navlink",
-            translateY: -45,
+            opacity: 1,
             delay: anime.stagger(100),
-            direction: 'reverse'
+            from: 'last'
         });
     }, [])
 
@@ -47,7 +47,7 @@ const Navbar = () => {
                             key={i}
                             id={`${navItem.id}-nav`}
                             href={`#${navItem.id}`}
-                            className="navlink text-text text-xl font-lato font-semibold hover:text-accent active:text-accent transform"
+                            className="opacity-0 navlink text-text text-xl font-lato font-semibold hover:text-accent active:text-accent transform"
                             to={navItem.id}
                             spy={true}
                             smooth={true}
