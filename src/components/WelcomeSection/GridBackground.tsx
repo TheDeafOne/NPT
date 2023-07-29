@@ -28,6 +28,7 @@ const GridBackground = () => {
                 delay: anime.stagger(50, {
                     grid: [columns, rows],
                     from: index,
+                    direction: 'reverse'
                 })
             }
         );
