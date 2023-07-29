@@ -12,12 +12,6 @@ const GridBackground = () => {
             setColumns(Math.floor(backgroundRef!.current.clientWidth / 50));
             setRows(Math.floor(backgroundRef!.current.clientHeight / 50));
         }
-        window.onresize = () => {
-            if (backgroundRef!.current !== null) {
-                setColumns(Math.floor(backgroundRef!.current.clientWidth / 50));
-                setRows(Math.floor(backgroundRef!.current.clientHeight / 50));
-            }
-        };
     }, [])
 
     const onTileClick = (e: any) => {
