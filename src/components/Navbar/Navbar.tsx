@@ -7,6 +7,7 @@ import anime from "animejs";
 
 const Navbar = () => {
     const [navHeight, setNavHeight] = useState(0)
+    const [isClient, setIsClient] = useState(false);
     const navItems = [
         { title: "About", id: "about-section" },
         { title: "Skills", id: "skills-section" },
@@ -17,12 +18,15 @@ const Navbar = () => {
 
     useEffect(() => {
         setNavHeight(document.getElementById("navbar")!.offsetHeight);
-        // anime({
-        //     targets: ".navlink",
-        //     translateY: 100,
-        //     delay: anime.stagger(100)
-        // });
+        setIsClient(true);
+        anime({
+            targets: ".navlink",
+            translateY: -45,
+            delay: anime.stagger(100),
+            direction: 'reverse'
+        });
     }, [])
+
 
     return (
         <nav id="navbar" className="bg-transparent sticky w-full z-20 top-0 left-0 flex flex-row items-center justify-center">
@@ -35,7 +39,7 @@ const Navbar = () => {
                     priority
                 />
             </div>
-            <div className="flex flex-row gap-5 px-10 justify-center items-center">
+            <div className={`${isClient ? 'visible' : 'invisible'} flex flex-row gap-5 px-10 justify-center items-center`}>
                 {navItems.map((navItem: any, i: number) => {
                     return (
                         <ScrollLink

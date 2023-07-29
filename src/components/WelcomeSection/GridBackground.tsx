@@ -6,6 +6,7 @@ const GridBackground = () => {
     const [rows, setRows] = useState(13);
     const [toggled, setToggled] = useState(false);
     const backgroundRef = useRef<HTMLDivElement>(null);
+    const backgroundTimeline = anime.timeline();
     useEffect(() => {
         if (backgroundRef!.current !== null) {
             setColumns(Math.floor(backgroundRef!.current.clientWidth / 50));
@@ -22,14 +23,20 @@ const GridBackground = () => {
     const onTileClick = (e: any) => {
         const index = Number(e.target.id)
         setToggled(!toggled);
-        anime({
-            targets: ".tile",
-            opacity: toggled ? 0 : 1,
-            delay: anime.stagger(50, {
-                grid: [columns, rows],
-                from: index
-            })
-        });
+        backgroundTimeline.add(
+            {
+                targets: ".tile",
+                opacity: toggled ? 0 : 1,
+                // translateX: anime.stagger(10, {grid: [14, 5], from: 'center', axis: 'x'}),
+                // translateY: anime.stagger(toggled ? 10 : -7, {grid: [columns, rows], from: 'first', axis: 'y'}),
+                // rotateZ: anime.stagger([0, 90], {grid: [14, 5], from: 'center', axis: 'x'}),
+                // delay: anime.stagger(200, {grid: [14, 5], from: 'center'}),
+                delay: anime.stagger(50, {
+                    grid: [columns, rows],
+                    from: index,
+                })
+            }
+        );
     }
 
     const gridStyles = {
