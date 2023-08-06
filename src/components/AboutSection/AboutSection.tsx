@@ -1,10 +1,16 @@
 'use client';
 import { useEffect, useRef, useState } from "react";
+import { useWindowScroll } from "react-use";
 import Section from "../Section";
+import AboutLine from "./AboutLine";
 
 const AboutSection = () => {
     const [isVisible, setIsVisibile] = useState(false)
+    const [sectionHeight, setSectionHeight] = useState(0);
+    const [sectionTop, setSectionTop] = useState(0);
+    const { y: scrollY } = useWindowScroll();
     const sectionRef = useRef<HTMLDivElement>(null)
+
 
     const observerCallback = (entries: any) => {
         const [entry] = entries
@@ -28,13 +34,24 @@ const AboutSection = () => {
         }
     }, [sectionRef])
 
+    useEffect(() => {
+        if (!isVisible || sectionRef!.current === null)
+            return;
+
+        // const progress = sectionRef.current.offsetWidth
+        setSectionHeight(sectionRef.current.offsetHeight);
+        setSectionTop(sectionRef.current.offsetTop);
+    }, [scrollY])
+
     return (
         <Section id="about-section">
-            <div className="text-text font-lato font-xl h-screen" ref={sectionRef}>
-                {isVisible ? 'yes' : 'no'}
-            </div>
-            <div className="relative bottom-0 text-text">
-                {isVisible ? 'yes' : 'no'}
+            <div className="text-text flex items-center content-center h-screen" ref={sectionRef}>
+
+                <div>
+                    <AboutLine scrollY={scrollY} sectionHeight={sectionHeight} sectionTop={sectionTop}/>
+                    {isVisible ? 'yes' : 'no'}
+
+                </div>
             </div>
         </Section>
     )
