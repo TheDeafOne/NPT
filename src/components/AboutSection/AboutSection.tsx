@@ -45,12 +45,22 @@ const AboutSection = () => {
 
     return (
         <Section id="about-section">
-            <div className="text-text flex items-center content-center h-screen" ref={sectionRef}>
+            <div className="text-text flex h-screen flex-row" ref={sectionRef}>
+                <div className="w-1/2 flex flex-col">
+                    <div className="absolute left-10">
+                        <span className="text-3xl font-lato font-semibold">
+                            About Me
+                        </span>
+                        <div>
+                            {/* <AboutLine scrollY={scrollY} sectionHeight={sectionHeight} sectionTop={sectionTop}/> */}
+                            {isVisible ? 'yes' : 'no'}
 
-                <div>
-                    <AboutLine scrollY={scrollY} sectionHeight={sectionHeight} sectionTop={sectionTop}/>
-                    {isVisible ? 'yes' : 'no'}
-
+                        </div>
+                        <AboutLine scrollY={scrollY} sectionHeight={sectionHeight} sectionTop={sectionTop}/>
+                    </div>
+                </div>
+                <div className="w-1/2 bg-black">
+                    second column
                 </div>
             </div>
         </Section>
