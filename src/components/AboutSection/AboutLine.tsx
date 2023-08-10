@@ -2,23 +2,24 @@ import { useEffect, useRef, useState } from "react";
 import { start } from "repl";
 
 const AboutLine = ({scrollY, sectionHeight, sectionTop}: any) => {
-    const [translateValue, setTranslateValue] = useState(0);
     const lineRef = useRef<HTMLDivElement>(null);
     const thresholdCorrection = sectionTop/5
-    const moveThreshold = 0.01; // 10%
+    const moveThreshold = 0.15; // 10%
     const startThreshold = Math.round(sectionHeight * moveThreshold);
-    const endThreshold = sectionHeight - startThreshold + thresholdCorrection;
     const sectionY = scrollY - thresholdCorrection;
-    useEffect(() => {
-        if (lineRef.current?.clientHeight !== undefined) {
-            setTranslateValue(lineRef.current?.clientHeight);
-        }
-        console.log(translateValue)
-    }, [scrollY])
+    // constrain section percent to 0 - 1 to two decimal places
+    const sectionPercent = Math.round(Math.min(Math.max(sectionY/startThreshold, 0), 1) * 100)/100;
+    const lineHeight = lineRef.current?.clientHeight ?? 0;
+    const translateValue = lineHeight * sectionPercent
+    console.log(sectionPercent);
+    console.log(translateValue);
+    const dynamicStyles = {
+        transform: `translateY(${translateValue}px)`
+    }
     
     return (
         <div className="text-text" ref={lineRef}>
-            <div className={`transform translate-y-[${translateValue}px]`}>
+            <div style={dynamicStyles}>
                 test
             </div>
         </div>
