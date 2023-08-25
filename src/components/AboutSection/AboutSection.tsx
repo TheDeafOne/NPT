@@ -1,27 +1,30 @@
 'use client';
 import { useEffect, useRef, useState } from "react";
-import { useWindowScroll } from "react-use";
 import Section from "../Section";
-import AboutLine from "./AboutLine";
+import useDetectScroll from "@smakss/react-scroll-direction";
+import anime, { timeline } from "animejs";
+
 
 const AboutSection = () => {
-    const [isVisible, setIsVisibile] = useState(false)
-    const [sectionHeight, setSectionHeight] = useState(0);
-    const [sectionTop, setSectionTop] = useState(0);
-    const { y: scrollY } = useWindowScroll();
+    const [isObserved, setIsObserved] = useState(false);
     const sectionRef = useRef<HTMLDivElement>(null)
-
+    const scrollDir = useDetectScroll({});
+    const aboutTimeline = anime.timeline();
+    
 
     const observerCallback = (entries: any) => {
         const [entry] = entries
-        setIsVisibile(entry.isIntersecting)
-        console.log(entry.isIntersecting);
+       
+        if (entry.isIntersecting && !isObserved) {
+            aboutTimeline.play();
+            setIsObserved(true);
+        }
     }
 
     useEffect(() => {
         const observer = new IntersectionObserver(observerCallback, {
             rootMargin: '40px',
-            threshold: 0.1
+            threshold: 0.3
         });
         if (sectionRef.current) {
             observer.observe(sectionRef.current);
@@ -35,13 +38,24 @@ const AboutSection = () => {
     }, [sectionRef])
 
     useEffect(() => {
-        if (!isVisible || sectionRef!.current === null)
-            return;
+        aboutTimeline.add(
+            {
+                targets: ".about-line",
+                translateY: ['100%','0%'],
+                opacity: 1,
+                delay: anime.stagger(200),
+                from: 'first',
+                easing: 'easeOutCirc',
+            }
+        );
+    }, [])
 
-        // const progress = sectionRef.current.offsetWidth
-        setSectionHeight(sectionRef.current.offsetHeight);
-        setSectionTop(sectionRef.current.offsetTop);
-    }, [scrollY])
+    const aboutLines = [
+        'Test1',
+        'Test2',
+        'Test3',
+        'Test4'
+    ]
 
     return (
         <Section id="about-section">
@@ -51,11 +65,15 @@ const AboutSection = () => {
                         <span className="text-3xl font-lato font-semibold">
                             About Me
                         </span>
-                        <div>
-                        
-                            <AboutLine scrollY={scrollY} sectionHeight={sectionHeight} sectionTop={sectionTop}/>
-
-                        </div>
+                        {aboutLines.map((line, i) => {
+                            return (
+                                <div className="overflow-hidden">
+                                    <div key={i} className="about-line transform opacity-0">
+                                        {line}
+                                    </div>
+                                </div>
+                            )
+                        })}
                     </div>
                 </div>
                 <div className="w-1/2 bg-black">
