@@ -52,11 +52,10 @@ const AboutSection = () => {
                             About Me
                         </span>
                         <div>
-                            {/* <AboutLine scrollY={scrollY} sectionHeight={sectionHeight} sectionTop={sectionTop}/> */}
-                            {isVisible ? 'yes' : 'no'}
+                        
+                            <AboutLine scrollY={scrollY} sectionHeight={sectionHeight} sectionTop={sectionTop}/>
 
                         </div>
-                        <AboutLine scrollY={scrollY} sectionHeight={sectionHeight} sectionTop={sectionTop}/>
                     </div>
                 </div>
                 <div className="w-1/2 bg-black">
