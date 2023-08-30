@@ -19,7 +19,7 @@ const Navbar = () => {
     }, [])
 
     return (
-        <nav id="navbar" className="bg-background sticky w-full z-20 top-0 left-0 flex flex-row justify-between shadow-md">
+        <nav id="navbar" className={`bg-background sticky w-full z-20 top-0 left-0 flex flex-row justify-between shadow-md -mt-[${navHeight}px]`}>
             <div className="px-2">
                 <Image
                     src={Logo}
