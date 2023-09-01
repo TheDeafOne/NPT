@@ -1,26 +1,34 @@
 'use client';
+import anime from "animejs";
 import { useEffect, useRef, useState } from "react";
 import Section from "../Section";
-import anime, { timeline } from "animejs";
 
 
 const AboutSection = () => {
     const [isObserved, setIsObserved] = useState(false);
     const sectionRef = useRef<HTMLDivElement>(null)
-    const aboutTimeline = anime.timeline();
     
 
-    const observerCallback = (entries: any) => {
-        const [entry] = entries
-       
-        if (entry.isIntersecting && !isObserved) {
-            aboutTimeline.play();
-            setIsObserved(true);
-        }
-    }
 
     useEffect(() => {
-        const observer = new IntersectionObserver(observerCallback, {
+        let didObserve = false;
+        const observer = new IntersectionObserver((entries: any) => {
+            const [entry] = entries
+            if (entry.isIntersecting && !didObserve) {
+                anime(
+                    {
+                        targets: ".about-line",
+                        translateY: ['100%','0%'],
+                        opacity: 1,
+                        delay: anime.stagger(200),
+                        from: 'first',
+                        easing: 'easeOutCirc',
+                    }
+                );
+                didObserve = true;
+                console.log(didObserve)
+            } 
+        }, {
             rootMargin: '40px',
             threshold: 0.3
         });
@@ -35,18 +43,6 @@ const AboutSection = () => {
         }
     }, [sectionRef])
 
-    useEffect(() => {
-        aboutTimeline.add(
-            {
-                targets: ".about-line",
-                translateY: ['100%','0%'],
-                opacity: 1,
-                delay: anime.stagger(200),
-                from: 'first',
-                easing: 'easeOutCirc',
-            }
-        );
-    }, [])
 
     const aboutLines = [
         'Test1',
@@ -65,8 +61,8 @@ const AboutSection = () => {
                         </span>
                         {aboutLines.map((line, i) => {
                             return (
-                                <div className="overflow-hidden">
-                                    <div key={i} className="about-line transform opacity-0">
+                                <div key={i} className="overflow-hidden">
+                                    <div className="about-line transform opacity-0 translate-y-full">
                                         {line}
                                     </div>
                                 </div>
