@@ -1,14 +1,12 @@
 'use client';
 import { useEffect, useRef, useState } from "react";
 import Section from "../Section";
-import useDetectScroll from "@smakss/react-scroll-direction";
 import anime, { timeline } from "animejs";
 
 
 const AboutSection = () => {
     const [isObserved, setIsObserved] = useState(false);
     const sectionRef = useRef<HTMLDivElement>(null)
-    const scrollDir = useDetectScroll({});
     const aboutTimeline = anime.timeline();
     
 
