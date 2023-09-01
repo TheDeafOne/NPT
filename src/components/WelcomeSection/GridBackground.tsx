@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 const GridBackground = () => {
     const [columns, setColumns] = useState(25);
     const [rows, setRows] = useState(13);
-    const [toggled, setToggled] = useState(false);
+    const [toggled, setToggled] = useState(true);
     const backgroundRef = useRef<HTMLDivElement>(null);
     const backgroundTimeline = anime.timeline();
     useEffect(() => {
