@@ -29,7 +29,7 @@ const Navbar = () => {
 
 
     return (
-        <nav id="navbar" className={`bg-transparent sticky w-full z-20 top-0 left-0 flex flex-row justify-between shadow-md -mt-[${navHeight}px]`}>
+        <nav id="navbar" className={`bg-background shadow-sm sticky w-full z-20 top-0 left-0 flex flex-row justify-between shadow-md -mt-[60px]`}>
             <div className="relative flex-1">
                 <Image
                     src={Logo}

@@ -45,24 +45,29 @@ const AboutSection = () => {
 
 
     const aboutLines = [
-        'Test1',
-        'Test2',
-        'Test3',
-        'Test4'
+        "I'm a software developer with years",
+        "of experience in building sleek",
+        "full-stack applications and efficient", 
+        "automation solutions.",
+        (<div className="h-5" />),
+        "I'm passionate about finding",
+        "clever ways to solve complex",
+        "problems and love learning new",
+        "ways to innovate and create.",
     ]
 
     return (
         <Section id="about-section">
             <div className="text-text flex h-screen flex-row" ref={sectionRef}>
                 <div className="w-1/2 flex flex-col">
-                    <div className="absolute left-10">
-                        <span className="text-3xl font-lato font-semibold">
-                            About Me
-                        </span>
+                    <div className="absolute left-20">
+                        {/* <div className="text-4xl font-lato font-semibold about-line transform opacity-0 translate-y-full">
+                            I'm Keegan
+                        </div> */}
                         {aboutLines.map((line, i) => {
                             return (
                                 <div key={i} className="overflow-hidden">
-                                    <div className="about-line transform opacity-0 translate-y-full">
+                                    <div className="about-line transform opacity-0 translate-y-full text-4xl pt-1">
                                         {line}
                                     </div>
                                 </div>
@@ -70,9 +75,9 @@ const AboutSection = () => {
                         })}
                     </div>
                 </div>
-                <div className="w-1/2 bg-black">
+                {/* <div className="w-1/2 bg-black">
                     second column
-                </div>
+                </div> */}
             </div>
         </Section>
     )
