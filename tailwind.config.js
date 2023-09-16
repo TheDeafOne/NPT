@@ -32,10 +32,10 @@ module.exports = {
       },
       colors: {
         'text': '#f4f6f5',
-        'background': '#121715',
+        'background': '#26302c',
         'primary-button': '#b5cab4',
         'secondary-button': '#f3fcf6',
-        'accent': '#b5cab4',
+        'accent': '#2A3833',
         'primary': '#1A3511'
       },
       fontFamily: {

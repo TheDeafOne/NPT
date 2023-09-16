@@ -61,9 +61,6 @@ const AboutSection = () => {
             <div className="text-text flex h-screen flex-row" ref={sectionRef}>
                 <div className="w-1/2 flex flex-col">
                     <div className="absolute left-20">
-                        {/* <div className="text-4xl font-lato font-semibold about-line transform opacity-0 translate-y-full">
-                            I'm Keegan
-                        </div> */}
                         {aboutLines.map((line, i) => {
                             return (
                                 <div key={i} className="overflow-hidden">
