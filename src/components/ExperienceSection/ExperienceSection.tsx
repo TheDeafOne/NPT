@@ -33,7 +33,7 @@ const ExperienceSection = () => {
                     <div className="flex flex-col gap-y-3 w-1/2 mt-5">
                         {experiences.map((experience, i) => {
                             return (
-                                <ExperienceContainer key={i} experience={experience} />
+                                <ExperienceContainer key={i}experience={experience} />
                             )
                         })}
                     </div>
