@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@material-tailwind/react": "^2.1.2",
     "@smakss/react-scroll-direction": "^2.1.1",
     "@types/node": "20.2.5",
     "@types/react": "18.2.8",
