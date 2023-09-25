@@ -1,11 +1,11 @@
-import React from "react";
 import {
-  Accordion,
-  AccordionHeader,
-  AccordionBody,
+    Accordion,
+    AccordionBody,
+    AccordionHeader,
 } from "@material-tailwind/react";
+import React from "react";
 import IExperience from "./Experience";
- 
+
 export function ExperienceAccordian() {
     const [open, setOpen] = React.useState(1);
 
@@ -29,7 +29,7 @@ export function ExperienceAccordian() {
             description: "test3test3test3test3test3"
         },
     ]
-    
+
     const handleOpen = (value: React.SetStateAction<number>) => setOpen(open === value ? 0 : value);
 
     return (
@@ -39,9 +39,12 @@ export function ExperienceAccordian() {
                 return (
                     <Accordion key={i} open={open === i} className="flex flex-col">
                         <AccordionHeader onClick={() => handleOpen(i)}>
-                            <div className="rounded bg-accent h-10 p-4 flex justify-center items-center">
+                            <div className="rounded bg-accent h-15 p-4 flex items-center w-full space text-base justify-between hover:transform hover:scale-[1.01] ease-in-out duration-300">
                                 <span>
                                     {experience.title} • {experience.company}
+                                </span>
+                                <span>
+                                    {experience.range[0]} - {experience.range[1]}
                                 </span>
                             </div>
                         </AccordionHeader>
