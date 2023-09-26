@@ -31,13 +31,35 @@ module.exports = {
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
       colors: {
-        'text': '#f4f6f5',
-        'background': '#26302c',
-        'primary-button': '#b5cab4',
-        'secondary-button': '#f3fcf6',
-        'accent': '#2A3833',
-        'primary': '#1A3511'
-      },
+        'text': '#e9edf2',
+        'background': '#030203',
+        'primary': '#bccad7',
+        'secondary': '#141f29',
+        'accent': '#577694',
+       },
+      // colors: {
+      //   'text': '#e0e8f0',
+      //   'background': '#0a0f15',
+      //   'primary': '#628ab2',
+      //   'secondary': '#141f29',
+      //   'accent': '#5b85ae',
+      //  },
+      // colors: {
+      //   'text': '#101623',
+      //   'background': '#edf1f7',
+      //   'primary': '#6481b9',
+      //   'secondary': '#d8dfee',
+      //   'accent': '#4d6dac',
+      //  },
+      // colors: {
+      //   'text': '#000000',
+      //   'background': '#f4f5fb',
+      //   'primary': '#a1acd9',
+      //   'secondary': '#c5cce7',
+      //   'accent': '#41549f',
+      //  },
+    
+
       fontFamily: {
         lato: [
           '"Lato"',
