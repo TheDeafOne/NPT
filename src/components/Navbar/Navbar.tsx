@@ -60,9 +60,7 @@ const Navbar = () => {
                     )
                 })}
             </div>
-            <div className="flex-1">
-                test
-            </div>
+            <div className="flex-1"/>
         </nav>
     )
 }
