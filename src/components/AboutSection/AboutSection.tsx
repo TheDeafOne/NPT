@@ -72,9 +72,6 @@ const AboutSection = () => {
                         })}
                     </div>
                 </div>
-                {/* <div className="w-1/2 bg-black">
-                    second column
-                </div> */}
             </div>
         </Section>
     )

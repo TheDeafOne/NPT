@@ -58,7 +58,7 @@ export function ExperienceAccordian() {
                 return (
                     <Accordion key={i} open={open === i} className="flex flex-col">
                         <AccordionHeader onClick={() => handleOpen(i)}>
-                            <div className="rounded bg-accent h-15 px-5 py-3 flex items-center w-full space text-base justify-between hover:transform hover:scale-[1.01] ease-in-out duration-300">
+                            <div className="rounded bg-secondary-800 h-15 px-5 py-3 flex items-center w-full space text-base justify-between hover:transform hover:scale-[1.01] ease-in-out duration-300">
                                 <span>
                                     {experience.title} • {experience.company}
                                 </span>
@@ -68,7 +68,7 @@ export function ExperienceAccordian() {
                             </div>
                         </AccordionHeader>
                         <AccordionBody>
-                            <div className="bg-accent mt-2 px-5 py-3 flex flex-row justify-between">
+                            <div className="bg-secondary-900 mt-2 px-5 py-3 flex flex-row justify-between">
                                 <div className="w-3/4">
                                     <div className="flex flex-row gap-5 items-center">
                                         <div className="flex items-center gap-1">

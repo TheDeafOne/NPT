@@ -10,7 +10,7 @@ import WelcomeSection from "@/components/WelcomeSection/WelcomeSection";
 
 export default function Home() {
   return (
-    <div className="bg-background">
+    <div className="bg-background-950 text-text-50">
       <Navbar />
       <WelcomeSection />
       <AboutSection/>
