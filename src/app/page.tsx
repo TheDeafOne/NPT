@@ -21,7 +21,7 @@ export default function Home() {
   return (
     <div className="bg-background-950 text-text-50" onMouseMove={handleMouseMove}>
       <div 
-            className='bg-white z-20 h-10 w-10 fixed'
+            className='bg-white z-20 h-10 w-10 fixed transform -translate-x-1/2 -translate-y-1/2 pointer-events-none'
             style={{ 
               left: newClientX, 
               top: newClientY,
