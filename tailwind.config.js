@@ -20,7 +20,7 @@ module.exports = {
         },
       },
       animation: {
-        'gradient-movement': 'gradient-animation 8s linear infinite',
+        'gradient-movement': 'gradient-animation 16s linear infinite',
       },
       backgroundSize: {
         '200': '200%'

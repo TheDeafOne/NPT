@@ -39,8 +39,8 @@ const GridBackground = () => {
     };
 
     return (
-        <div className="absolute w-screen h-screen">
-            <div className='h-screen grid' style={gridStyles} ref={backgroundRef}>
+        <div className="absolute h-screen  w-screen">
+            <div className='grid h-screen' style={gridStyles} ref={backgroundRef}>
                 {Array.from(Array(columns * rows)).map((e, id) => {
                     return (
                         <div onClick={onTileClick} key={id} id={String(id)} className="tile relative before:bg-background-950 before:content-[''] before:absolute before:inset-[0.5px]" />
