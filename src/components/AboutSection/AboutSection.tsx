@@ -59,12 +59,12 @@ const AboutSection = () => {
     return (
         <Section id="about-section">
             <div className="text-text flex h-screen flex-row" ref={sectionRef}>
-                <div className="w-1/2 flex flex-col">
-                    <div className="absolute left-20">
+                <div className="w-1/2 flex flex-col ml-32 mt-12">
+                    <div>
                         {aboutLines.map((line, i) => {
                             return (
-                                <div key={i} className="overflow-hidden">
-                                    <div className="about-line transform opacity-0 translate-y-full text-4xl pt-1">
+                                <div key={i} className="overflow-hidden h-14">
+                                    <div className="about-line transform opacity-0 translate-y-full text-5xl pt-1">
                                         {line}
                                     </div>
                                 </div>

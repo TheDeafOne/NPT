@@ -32,7 +32,7 @@ module.exports = {
       },
       colors: {
         'text': {
-          50: '#eff2f6',
+          50: '#C6C7D2',
           100: '#dfe5ec',
           200: '#bfcbd9',
           300: '#9fb1c6',
@@ -55,7 +55,7 @@ module.exports = {
           700: '#5c3d5c',
           800: '#3d293d',
           900: '#1f141f',
-          950: '#0f0a0f',
+          950: '#0F0F18',
         },
         'primary': {
           50: '#eff2f5',
