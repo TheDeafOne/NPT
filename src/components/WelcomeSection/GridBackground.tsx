@@ -39,7 +39,7 @@ const GridBackground = () => {
     };
 
     return (
-        <div className="absolute h-screen  w-screen">
+        <div className="absolute h-screen  w-screen z-[20]">
             <div className='grid h-screen' style={gridStyles} ref={backgroundRef}>
                 {Array.from(Array(columns * rows)).map((e, id) => {
                     return (

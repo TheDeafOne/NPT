@@ -5,10 +5,8 @@ import ExperienceSection from "@/components/ExperienceSection/ExperienceSection"
 import Footer from "@/components/Footer/Footer";
 import Navbar from "@/components/Navbar/Navbar";
 import ProjectsSection from "@/components/ProjectsSection/ProjectsSection";
-import SkillsSection from "@/components/SkillsSection/SkillsSection";
 import WelcomeSection from "@/components/WelcomeSection/WelcomeSection";
-import MouseHighlighter from "@/components/MouseHighlighter/MouseHighlighter";
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 
 export default function Home() {
   const [newClientX, setClientX] = useState(0);
@@ -20,22 +18,22 @@ export default function Home() {
   }
   return (
     <div className="bg-background-950 text-text-50" onMouseMove={handleMouseMove}>
-      <div 
-            className='bg-white z-20 h-10 w-10 fixed transform -translate-x-1/2 -translate-y-1/2 pointer-events-none'
-            style={{ 
-              left: newClientX, 
-              top: newClientY,
-            }}
-        />
-      <MouseHighlighter />
+      <div
+        className='bg-white z-20 h-32 w-32 fixed rounded-full pointer-events-none origin-center bg-gradient-to-r from-accent-500 to-primary-950 animate-gradient-rotate'
+        style={{
+          left: newClientX,
+          top: newClientY,
+        }}
+      />
+      <div className="pointer-events-none w-full h-screen fixed backdrop-blur-3xl z-[21]"/>
       <Navbar />
       <WelcomeSection />
-      <AboutSection/>
+      <AboutSection />
       {/* <SkillsSection /> */}
       <ProjectsSection />
       <ExperienceSection />
       <ContactSection />
-      <Footer/>
+      <Footer />
     </div>
   )
 }

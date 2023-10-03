@@ -18,9 +18,21 @@ module.exports = {
             backgroundPosition: '200%',
           },
         },
+        'rotate-animation': {
+          "0%": {
+            transform: "translate(-50%,-50%) rotate(0deg)"
+          },
+          "50": {
+            scale: "1 1.5"
+          },
+          "100%": {
+            transform: "translate(-50%,-50%) rotate(360deg)"
+          }
+        }
       },
       animation: {
         'gradient-movement': 'gradient-animation 16s linear infinite',
+        'gradient-rotate': 'rotate-animation 20s infinite'
       },
       backgroundSize: {
         '200': '200%'

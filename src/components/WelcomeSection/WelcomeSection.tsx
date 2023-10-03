@@ -39,10 +39,10 @@ const WelcomeSection = () => {
 
     return (
         <Section id="welcome-section">
-            <GridBackground />
-            <div id="background-mask" className="absolute h-screen w-screen pointer-events-none bg-gradient-to-b from-background-950 via-transparent to-background-950" />
-            <div className="h-screen flex items-center justify-center animate-gradient-movement flex-col bg-200 bg-gradient-to-r from-secondary-900 via-accent-500 to-secondary-900" ref={sectionRef}>
-                <div className='font-lato text-text flex justify-center w-full h-full items-center'>
+            {/* <GridBackground /> */}
+            {/* <div id="background-mask" className="absolute h-screen w-screen pointer-events-none bg-gradient-to-b from-background-950 z-[25] via-transparent to-background-950" /> */}
+            <div className="h-screen flex items-center justify-center animate-gradient-movement flex-col" ref={sectionRef}> {/* bg-200 bg-gradient-to-r from-secondary-900 via-accent-500 to-secondary-900*/}
+                <div className='font-lato text-text flex justify-center w-full h-full items-center z-[24] pointer-events-none'>
                     <svg className="transform scale-150 pointer-events-none" width="515" height="99" viewBox="0 0 515 99" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <mask id="path-1-outside-1_5_9" maskUnits="userSpaceOnUse" x="0.00800323" y="0.879997" width="515" height="98" fill="black">
                             <rect fill="white" x="0.00800323" y="0.879997" width="515" height="98" />

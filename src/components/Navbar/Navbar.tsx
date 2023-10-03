@@ -1,9 +1,9 @@
 'use client';
+import anime from "animejs";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { Link as ScrollLink, animateScroll } from 'react-scroll';
 import Logo from '../../resources/icon-light.svg';
-import anime from "animejs";
 
 const Navbar = () => {
     const [navHeight, setNavHeight] = useState(0)
@@ -29,7 +29,7 @@ const Navbar = () => {
 
 
     return (
-        <nav id="navbar" className={`bg-background shadow-sm sticky w-full z-20 top-0 left-0 flex flex-row justify-between shadow-md -mt-[60px]`}>
+        <nav id="navbar" className={`shadow-sm sticky w-full z-[31] top-0 left-0 flex flex-row justify-between shadow-md backdrop-blur-md`}>
             <div className="relative flex-1">
                 <Image
                     src={Logo}
@@ -60,7 +60,7 @@ const Navbar = () => {
                     )
                 })}
             </div>
-            <div className="flex-1"/>
+            <div className="flex-1" />
         </nav>
     )
 }
