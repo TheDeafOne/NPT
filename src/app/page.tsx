@@ -19,7 +19,7 @@ export default function Home() {
   return (
     <div className="bg-background-950 text-text-50" onMouseMove={handleMouseMove}>
       <div
-        className='bg-white z-20 h-32 w-32 fixed rounded-full pointer-events-none origin-center bg-gradient-to-r from-accent-500 to-primary-950 animate-gradient-rotate'
+        className='bg-white z-20 h-44 w-44 fixed rounded-full pointer-events-none origin-center bg-gradient-to-r from-accent-500 to-primary-950 animate-gradient-rotate'
         style={{
           left: newClientX,
           top: newClientY,

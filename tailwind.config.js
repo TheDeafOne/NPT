@@ -23,7 +23,7 @@ module.exports = {
             transform: "translate(-50%,-50%) rotate(0deg)"
           },
           "50": {
-            scale: "1 1.5"
+            scale: "1 6"
           },
           "100%": {
             transform: "translate(-50%,-50%) rotate(360deg)"
@@ -32,7 +32,7 @@ module.exports = {
       },
       animation: {
         'gradient-movement': 'gradient-animation 16s linear infinite',
-        'gradient-rotate': 'rotate-animation 20s infinite'
+        'gradient-rotate': 'rotate-animation 15s infinite'
       },
       backgroundSize: {
         '200': '200%'
